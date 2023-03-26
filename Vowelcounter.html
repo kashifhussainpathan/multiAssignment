@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Vowel Counter</title>
+</head>
+<body>
+    <h1>Vowel Counter</h1>
+    <p>Enter your name below to count the number of vowels:</p>
+    <input type="text" id="nameInput">
+    <button onclick="countVowels()">Count Vowels</button>
+    <p id="result"></p>
+
+    <script>
+        function countVowels() {
+          const name = document.getElementById("nameInput").value;
+          const vowels = "aeiouAEIOU";
+          var count = 0;
+
+          for(var i=0; i<name.length; i++){
+            if(vowels.indexOf(name[i]) !== -1){
+                count ++;
+            }
+          }
+          var result =document.getElementById("result");
+          result.innerHTML = "There are " + count + " vowels in your name.";
+        } 
+    </script>
+</body>
+</html>

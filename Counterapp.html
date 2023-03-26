@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            height: 100vh;
+            display: grid;
+            place-items: center;
+            text-align: center;
+        }
+
+        .counter-app {
+            box-shadow: 0 0 10px #675e5e;
+            border-radius: 10px;
+            background-color: #d2d2d2;
+            padding: 10px;
+        }
+
+        .buttons {
+            display: flex;
+            margin-bottom: 10px;
+        }
+
+        #display {
+            width: 35px;
+            border: 2px solid black;
+            border-radius: 5px;
+            margin: 0 3px;
+            font-size: 28px;
+        }
+
+        button {
+            font-size: 20px;
+            font-weight: bold;
+            border: 2px solid #3f3434;
+            border-radius: 5px;
+            padding: 5px 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="counter-app">
+            <h1>Counter App</h1>
+            <div class="buttons">
+                <button id="incre">increment by 1</button>
+                <div id="display">
+                    0
+                </div>
+                <button id="des">decrement by 1</button>
+            </div>
+            <button id="reset">Reset Value</button>
+        </div>
+    </div>
+
+    <script>
+    const incre  = document.getElementById("incre")
+    const des = document.getElementById("des");
+    const display = document.getElementById("display");
+    const reset = document.getElementById("reset");
+    
+    
+   
+    
+    incre.addEventListener("click",() =>{
+        const value = Number(display.innerText );
+        display.innerText = value + 1;
+  
+    })
+    des.addEventListener("click",() =>{
+        const value = Number(display.innerText );
+        display.innerText = value - 1;
+  
+    })
+    reset.addEventListener("click",() =>{
+        const value = Number(display.innerText );
+        display.innerText = "0";
+  
+    })
+   </script>
+</body>
+
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Move Image</title>
+
+    <style>
+
+        img {
+            height: 100px;
+            position: absolute;
+        }
+    </style>
+</head>
+
+<body>
+
+    <img class="img" src="https://images.unsplash.com/photo-1679238757336-a001691abb5d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+        alt="bird" srcset="">
+
+    <script>
+        const image = document.querySelector('.img');
+
+        // Set the initial position of the image
+        let xPos = 0;
+        let yPos = 0;
+
+        // Set the amount by which the image will move on each key press
+        const moveAmount = 10;
+
+        // Add event listeners for the arrow keys
+        document.addEventListener('keydown', (event) => {
+            switch (event.code) {
+                case 'ArrowLeft':
+                    // Move the image left
+                    xPos -= moveAmount;
+                    console.log(xPos)
+                    break;
+                case 'ArrowRight':
+                    // Move the image right
+                    xPos += moveAmount;
+                    break;
+                case 'ArrowUp':
+                    // Move the image up
+                    yPos -= moveAmount;
+                    break;
+                case 'ArrowDown':
+                    // Move the image down
+                    yPos += moveAmount;
+                    console.log(yPos)
+                    break;
+            }
+
+            // Set the new position of the image
+            image.style.left = xPos + 'px';
+            image.style.top = yPos + 'px';
+        });
+    </script>
+</body>
+
+</html>

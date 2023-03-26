@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Change Text on Button Click</title>
+
+    <style>
+        body{
+            margin-top: 120px;
+           display: grid;
+           place-items:center ;
+
+        }
+       h1{
+        color: blueviolet;
+       }button{
+        padding: 20px 20px 20px 20px;
+        background-color: brown;
+        color: white;
+        font-weight: 700;
+        border: none;
+       }
+    </style>
+  </head>
+  <body>
+    <h1 id="heading">The most affordable learning platform</h1>
+    <button onclick="HeadingChangeText()">Change Heading Text</button>
+  <script>
+    const heading = document.getElementById("heading");
+    let isPWSkills = false;
+
+    
+
+    function HeadingChangeText() {
+	if (isPWSkills) {
+		heading.textContent = 'The most affordable learning platform';
+        heading.style.color = "purple";
+		isPWSkills = false;
+	} else {
+		heading.textContent = 'PW Skills';
+        heading.style.color = "red";
+		isPWSkills = true;
+	}
+}
+
+  </script>
+  </body>
+</html>
